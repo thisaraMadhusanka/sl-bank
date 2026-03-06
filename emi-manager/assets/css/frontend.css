@@ -1,0 +1,216 @@
+/**
+ * Sri Lanka EMI Manager for WooCommerce - Frontend Styles
+ */
+
+:root {
+    --emi-primary: #5c2079;
+    --emi-border: #d1d5db;
+    --emi-border-active: #5c2079;
+    --emi-text: #374151;
+    --emi-text-muted: #6b7280;
+    --emi-bg: #ffffff;
+    --emi-bg-alt: #f9fafb;
+    --emi-radius: 4px;
+    --emi-transition: all 0.2s ease;
+}
+
+.emi-section {
+    margin: 24px 0;
+    font-family: inherit;
+    color: var(--emi-text);
+}
+
+.emi-section__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a4f8b;
+    /* A typical blue for WooCommerce titles */
+}
+
+/* Cards Row */
+.emi-bank-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.emi-bank-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 70px;
+    background: var(--emi-bg);
+    border: 1px solid var(--emi-border);
+    border-radius: var(--emi-radius);
+    padding: 8px;
+    cursor: pointer;
+    transition: var(--emi-transition);
+    outline: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+.emi-bank-card:hover {
+    border-color: var(--emi-border-hover);
+    background: var(--emi-bg);
+    /* Ensure background stays white */
+    color: var(--emi-text);
+    /* Ensure color doesn't change */
+}
+
+.emi-bank-card[aria-expanded="true"] {
+    border-color: var(--emi-border-active);
+    border-width: 2px;
+    padding: 7px;
+    /* Adjust padding to keep box size consistent with 2px border */
+    background: var(--emi-bg);
+    color: var(--emi-text);
+    box-shadow: none;
+    /* Explicitly remove any box-shadow to prevent doubling */
+}
+
+.emi-bank-card:focus {
+    outline: none;
+    border-color: var(--emi-border-active);
+    background: var(--emi-bg);
+    color: var(--emi-text);
+}
+
+.emi-bank-card:active {
+    background: var(--emi-bg);
+    color: var(--emi-text);
+}
+
+.emi-bank-card__logo {
+    max-width: 90px;
+    max-height: 24px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+.emi-bank-card__name {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.emi-bank-card__preview {
+    font-size: 11px;
+    color: var(--emi-text-muted);
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.emi-preview-amount {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--emi-text);
+}
+
+/* Panel */
+.emi-panels-container {
+    position: relative;
+}
+
+.emi-panel {
+    background: var(--emi-bg);
+    border: 1px solid var(--emi-border);
+    border-radius: var(--emi-radius);
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-top: 8px;
+}
+
+.emi-panel[hidden] {
+    display: none;
+}
+
+.emi-panel__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--emi-text-muted);
+    padding: 4px;
+}
+
+.emi-panel__close:hover {
+    color: var(--emi-text);
+}
+
+.emi-panel__title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    color: var(--emi-text);
+}
+
+/* Table */
+.emi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.emi-table th,
+.emi-table td {
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid var(--emi-border);
+}
+
+.emi-table th {
+    background: var(--emi-bg-alt);
+    font-weight: 600;
+    color: var(--emi-text-muted);
+}
+
+.emi-table__monthly .emi-amount,
+.emi-table__total .emi-amount {
+    font-weight: 500;
+}
+
+/* Terms */
+.emi-terms {
+    font-size: 13px;
+    color: var(--emi-text-muted);
+    line-height: 1.5;
+}
+
+.emi-terms strong {
+    font-size: 14px;
+    color: var(--emi-text);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.emi-terms p {
+    margin-bottom: 8px;
+}
+
+.emi-terms p:last-child {
+    margin-bottom: 0;
+}
+
+/* Loading state */
+.emi-section--loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
